@@ -14,3 +14,9 @@ Project created following [Android docs][a1] using _Empty Activity_ template
 - Min SDK API 28
 
 [a1]: https://developer.android.com/develop/ui/compose/setup
+
+## Importing all extended icons
+The branch `ImportingAllExtendedIcons` uses an approach that is _officially discouraged_ on the [Maven repository][m1] but is regularly used in many of the official [jetpack compose samples][g1].
+
+[m1]: [a1]: https://developer.android.com/develop/ui/compose/setup
+[g1]: https://github.com/android/compose-samples

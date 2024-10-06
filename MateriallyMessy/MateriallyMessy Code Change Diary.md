@@ -27,5 +27,21 @@ MainActivity.kt
   - add a Column wrapping the Text
   - add an Icon below the Text
 
-
 [m1]: https://developer.android.com/reference/kotlin/androidx/compose/material/icons/package-summary
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+## Adding extended material icon
+2024-10-06
+
+libs.versions.toml
+- added library declaration
+  androidx-compose-material-iconsExtended = { module = "androidx.compose.material:material-icons-extended" }
+
+build.gradle.kts
+- added dependency
+    implementation(libs.androidx.compose.material.iconsExtended)
+
+MainActivity.kt
+- add import androidx.compose.material.icons.rounded.Print
+- Greeting change layout adding a Row so now two Icons below the text
+- center the text

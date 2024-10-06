@@ -4,12 +4,16 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.ShoppingCart
 import androidx.compose.material3.Icon
+import androidx.compose.material.icons.rounded.Print
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -41,13 +45,21 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 
         Text(
             text = "Greetings $name",
-            modifier = modifier
+            modifier = modifier.then( Modifier.align(Alignment.CenterHorizontally))
         )
-        Icon(
-            Icons.Rounded.ShoppingCart,
-            contentDescription = "just a test",
-            modifier = Modifier.align(Alignment.CenterHorizontally)
-        )
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceEvenly
+        ) {
+            Icon(
+                Icons.Rounded.ShoppingCart,
+                contentDescription = "just a test"
+            )
+            Icon(
+                Icons.Rounded.Print,
+                contentDescription = "just a test"
+            )
+        }
     }
 }
 
