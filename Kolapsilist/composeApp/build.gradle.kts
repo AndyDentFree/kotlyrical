@@ -90,6 +90,9 @@ android {
         debugImplementation(compose.uiTooling)
     }
 }
+dependencies {
+    implementation(libs.androidx.ui.tooling.preview.android)
+}
 
 compose.desktop {
     application {
