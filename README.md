@@ -3,9 +3,11 @@ Playing with Kotlin especially Compose Multiplatform to sing its praises
 
 Projects under here will each have their own readme and a short entry here if they are of interest.
 
-## Kotlin Compose Multiplatform Mobile
+## Kotlin Compose Multiplatform
+Whilst initially targeting mobile, CMP examples below are being built against desktop, mostly tested on macOS, and web.
+
 - [Kolapsilist](./Kolapsilist/README.md) - in progress look at how to have a list of data with collapsing and rendering alternative content when collapsed.
-- [MateriallyMessy](./MateriallyMessy/README.md) - very simple use of Material resources in a pure Android Jetpack compose project.
+- [MateriallyMessy](./MateriallyMessy/README.md) - very simple use of Material resources in a pure Android Jetpack compose project, as base for comparison.
 
   
 ## Other Stuff

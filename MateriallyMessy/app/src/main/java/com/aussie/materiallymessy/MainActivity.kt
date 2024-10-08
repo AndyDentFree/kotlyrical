@@ -53,12 +53,12 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         ) {
             Icon(
                 Icons.Rounded.ShoppingCart,
-                contentDescription = "just a test"
+                contentDescription = "go shopping"
             )
             Icon(
                 //Icons.Rounded.Print, from material extended, used as local copy
                 painter = painterResource(R.drawable.print),
-                contentDescription = "just a test"
+                contentDescription = "print"
             )
         }
     }
