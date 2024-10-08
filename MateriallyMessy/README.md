@@ -34,7 +34,7 @@ The guide above walks you through adding the files in a `drawable` folder.
 #### Where to put icons
 For a pure Android project such as MateriallyMessy, that will be at a path like `app/res/drawable`.
 
-For a Compose project, the path will be like `app/composeApp/src/commonMain/composeResources`.
+For a Compose project, the path will be like `app/composeApp/src/commonMain/composeResources/drawable`.
 
 The `composeResources` directory may not appear - **DON'T PANIC**
 
