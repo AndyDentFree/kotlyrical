@@ -23,7 +23,7 @@ fun App() {
         var showContent by remember { mutableStateOf(false) }
         Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
             Button(onClick = { showContent = !showContent }) {
-                Text("Click to show demo data!")
+                Text("Click to show grid!")
             }
             AnimatedVisibility(showContent) {
                 GridScreen()

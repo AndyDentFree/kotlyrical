@@ -24,7 +24,6 @@ libs.versions.toml
   
 build.gradle.kts
 - added dependency     implementation(libs.androidx.ui.tooling.preview.android)
-
  
 
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -40,3 +39,21 @@ App.kt
 - App replace Greeting with GridScreen() to show default grid
 
 Greeting.kt removed
+
+ 
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+## Refactor for previewing
+2024-10-08
+
+GridScreen.kt
+- rowRender() hoisted out of GridScreen()
+- Preview setup to show rowRender
+- inline use of row.id hoisted to smallId
+
+RowItem.kt
+- added smallId() function to display subset of Id and catch errors so can preview on Desktop
+
+MainActivity.kt
+- Preview changed to just have GridScreen as that's not visible if preview App
+  (however fails to render for Android previews due icon issue)

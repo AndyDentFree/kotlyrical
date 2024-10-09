@@ -16,8 +16,11 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+
 @Preview
 @Composable
 fun AppAndroidPreview() {
-    App()
+    // Previewing for Android Studio in Android mode
+    // CMPGotcha fails with "Render Issues" due icons missing
+    GridScreen()
 }

@@ -8,6 +8,7 @@ Whilst initially targeting mobile, CMP examples below are being built against de
 
 - [Kolapsilist](./Kolapsilist/README.md) - in progress look at how to have a list of data with collapsing and rendering alternative content when collapsed.
 - [MateriallyMessy](./MateriallyMessy/README.md) - very simple use of Material resources in a pure Android Jetpack compose project, as base for comparison.
+- _MultiLang__ - upcoming test of internationalisation presenting two languages on same screen.
 
   
 ## Other Stuff

@@ -2,6 +2,10 @@
 
 Sample checking out nuances on creating multi-column grids in Compose and a few variations on how to collapse sections.
 
+**Important** I'm trying to mark all the places in the code where weird platform-dependencies or other CMP vs Jetpack pains bite with a comment:
+
+`// CMPGotcha`
+
 ## Creation
 Project created following Kotlin docs on [using Web Wizard][k1]:
 - Project Name: Kolapsilist

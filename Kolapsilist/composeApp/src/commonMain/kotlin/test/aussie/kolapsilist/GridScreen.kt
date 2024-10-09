@@ -42,38 +42,7 @@ fun GridScreen() {
         modifier = Modifier.fillMaxSize()
     ) {
         items(rows) { row ->
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(8.dp)
-                    .background(if (row.isSelected) Color.LightGray else Color.White)
-                    .clickable {
-                        // Handle row selection
-                        row.isSelected = !row.isSelected
-                    },
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                // First column: Expand/Collapse Icon
-                if (!row.isExpanded) {
-                    IconButton(onClick = { row.isExpanded = true }) {
-                        Icon(painter = painterResource(Res.drawable.expand_content), contentDescription = null)
-                    }
-                } else {
-                    IconButton(onClick = { row.isExpanded = false }) {
-                        Icon(painter = painterResource(Res.drawable.collapse_content), contentDescription = null)
-                    }
-                }
-
-                // Columns 2-5: Placeholder text, replace with your content
-                Spacer(modifier = Modifier.width(8.dp))
-                for (i in 2..5) {
-                    Text(
-                        text = "Row ${row.id} Col $i",
-                        fontSize = 16.sp,
-                        modifier = Modifier.weight(1f)
-                    )
-                }
-            }
+            rowRender(row)
 
             // Conditionally show expanded content
             if (row.isExpanded) {
@@ -84,15 +53,68 @@ fun GridScreen() {
                         .padding(start = 48.dp), // Indent to align with the grid
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Text("Expanded content for Row ${row.id}")
+                    Text("Expanded Row ${row.smallId()}")
                 }
             }
         }
     }
 }
 
+@OptIn(ExperimentalUuidApi::class)
+@Composable
+fun rowRender(row: RowItem) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(8.dp)
+            .background(if (row.isSelected) Color.Cyan else Color.LightGray)
+            .clickable {
+                // Handle row selection
+                row.isSelected = !row.isSelected
+            },
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        // First column: Expand/Collapse Icon
+        if (!row.isExpanded) {
+            IconButton(onClick = { row.isExpanded = true }) {
+                Icon(
+                    painter = painterResource(Res.drawable.expand_content), // CMPGotcha
+                    contentDescription = null
+                )
+            }
+        } else {
+            IconButton(onClick = { row.isExpanded = false }) {
+                Icon(
+                    painter = painterResource(Res.drawable.collapse_content), // CMPGotcha
+                    contentDescription = null
+                )
+            }
+        }
+
+        // Columns 2-5: Placeholder text, replace with your content
+        Spacer(modifier = Modifier.width(8.dp))
+        for (i in 2..5) {
+            Text(
+                text = "Row ${row.smallId()} Col $i",
+                //text = "Row Col $i",
+                fontSize = 14.sp,
+                modifier = Modifier.weight(1f)
+            )
+        }
+    }
+}
+
+
+@OptIn(ExperimentalUuidApi::class)
 @Preview
 @Composable
 fun GridScreenPreview() {
-    GridScreen()
+    // preview for Fleet usable in Desktop mode
+    // CMPGotcha rowRender fails on Android due icon resources path from Res.drawable not R.drawable
+    val r = remember{ RowItem() }
+    Column {
+        rowRender(r)
+    }
+
+
 }
