@@ -21,9 +21,19 @@ import previewablepic.composeapp.generated.resources.compose_multiplatform
 fun App() {
     MaterialTheme {
         val greeting = remember { Greeting().greet() }
+        var clickMsg by remember { mutableStateOf("Click to count") }
+        var clickCount by remember { mutableStateOf(0) }
+
         Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
             Image(painterResource(Res.drawable.compose_multiplatform), null)
             Text("Compose: $greeting")
+            // added button so can check if breakpoints working in actions, rather than trying to breakpoint on render tree
+            Button(onClick = {
+                clickCount += 1
+                clickMsg = "Click again, $clickCount so far"
+            }) {
+                Text(clickMsg)
+            }
         }
     }
 }
