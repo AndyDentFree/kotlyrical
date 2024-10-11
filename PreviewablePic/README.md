@@ -2,7 +2,9 @@
 
 Very trivial sample to demonstrate being able to use Preview in Android Studio and Fleet, with common icons.
 
-Built to isolate the preview problem because of problems encountered doing the much more complicated [Kolapsilist sample]()../Kolaspilist/README.md).
+Built to isolate the preview problem because of problems encountered doing the much more complicated [Kolapsilist sample](../Kolaspilist/README.md).
+
+**Summary** drama all goes away with Compose Plugin v1.7.0 onwards, no fancy workarounds needed (sigh).
 
 ## Buildable incomplete state and previews
 As of 2024-10-11, without having done any abstraction on the image resource, so it's coming from `Image(painterResource(Res.drawable.compose_multiplatform)` 
