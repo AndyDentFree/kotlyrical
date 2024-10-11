@@ -38,3 +38,12 @@ gradle/wrappper/gradle-wrapper.properties
 
 gradle.properties
 - added `kotlin.mpp.enableCInteropCommonization=true`
+
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+## Get pictures to appear in Android Preview via latest Compose
+2024-10-11
+
+libs.versions.toml
+- compose-plugin changed from "1.6.11" to "1.7.0-alpha01"
+

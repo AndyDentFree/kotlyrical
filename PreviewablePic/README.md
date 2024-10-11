@@ -13,6 +13,22 @@ As of 2024-10-11, without having done any abstraction on the image resource, so 
 - editing in Android Studio 2024.2.1
   - MainActivity.kt supports local Android Preview, working same as Fleet's App() preview showing the `Column` without the `Image`.
   
+## FIXED!
+I thought I was going to be doing complicated `expect/actual` things but it turns out this has been [fixed since June][g1]
+
+The difference was that I needed to be using an [Alpha version of Compose][g2]
+
+So the **real** fix was to edit `gradle/libs.versions.toml` and change `compose-plugin = "1.7.0-alpha01"`.
+
+- edited `libs.versions.toml` changing `compose-plugin = “1.7.0-alpha01”`
+- (slow) Gradle resync
+- Android preview (from `MainActivity.kt` looked unchanged, not showing image)
+- Build - Clean Project (possibly unnecessary)
+- Ran an Android simulator, which worked (as it had been all along), showing image
+- Go back into `MainActivity.kt` and yes the preview now shows the image with a path `Res.drawable.compose_multiplatform`
+  
+[g1]: https://github.com/JetBrains/compose-multiplatform/pull/4965
+[g2]: https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.7.0-alpha01
   
 ## Web Wizard-generated README
 This is a Kotlin Multiplatform project targeting Android, iOS, Web, Desktop.
