@@ -4,7 +4,16 @@ Very trivial sample to demonstrate being able to use Preview in Android Studio a
 
 Built to isolate the preview problem because of problems encountered doing the much more complicated [Kolapsilist sample]()../Kolaspilist/README.md).
 
+## Buildable incomplete state and previews
+As of 2024-10-11, without having done any abstraction on the image resource, so it's coming from `Image(painterResource(Res.drawable.compose_multiplatform)` 
+- editing in Fleet version: 1.41.101
+	- previewing App  with Android Preview shows the _rest of the Column_ skipping the `Image` without error. (In earlier versions this had a constant _out of date - rebuild_ `renderError`)
+	- previewing App() with Desktop Preview shows the full Column
 
+- editing in Android Studio 2024.2.1
+  - MainActivity.kt supports local Android Preview, working same as Fleet's App() preview showing the `Column` without the `Image`.
+  
+  
 ## Web Wizard-generated README
 This is a Kotlin Multiplatform project targeting Android, iOS, Web, Desktop.
 
