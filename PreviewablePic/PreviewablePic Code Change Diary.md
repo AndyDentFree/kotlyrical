@@ -47,3 +47,19 @@ gradle.properties
 libs.versions.toml
 - compose-plugin changed from "1.6.11" to "1.7.0-alpha01"
 
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+## Build with release 1.7.0 Compose
+2024-10-16
+
+- libs.versions.toml
+  - agp 8.2.2 => 8.6.1
+  - androidx-activityCompose 1.9.2 => 1.9.3
+  - androidx-lifecycle 2.8.2 => 2.8.3
+  - kotlin 2.0.20 => 2.0.21
+  - compose-plutin 1.7.0-alpha01 => 1.7.0
+  
+
+- gradle-wrapper.properties
+  - distributionUrl bumped from 8.6 to 8.7
+

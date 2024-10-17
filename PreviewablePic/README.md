@@ -31,6 +31,24 @@ So the **real** fix was to edit `gradle/libs.versions.toml` and change `compose-
   
 [g1]: https://github.com/JetBrains/compose-multiplatform/pull/4965
 [g2]: https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.7.0-alpha01
+
+## Fixed with release 1.7.0 and sensitivity warning
+I went around a few hours worth of wasted time, after reading warnings on Slack and testing, found the Android Preview **stopped working** with `1.7.0-rc01` and `1.7.0`.
+
+Eventually by cross-testing what worked, found that some versions of other libs and build tools need updating between compose-plugin `1.7.0-alpha01` and those later versions.
+
+It is most likely to be something to do with the agp or gradle versions but here's the full list updated, as prompted in Fleet. Do **not ignore the yellow underlines**
+
+- libs.versions.toml
+  - agp 8.2.2 => 8.6.1
+  - androidx-activityCompose 1.9.2 => 1.9.3
+  - androidx-lifecycle 2.8.2 => 2.8.3
+  - kotlin 2.0.20 => 2.0.21  (pretty sure this is irrelevant)
+  - compose-plutin 1.7.0-alpha01 => 1.7.0
+
+- gradle-wrapper.properties
+  - distributionUrl bumped from 8.6 to 8.7
+
   
 ## Web Wizard-generated README
 This is a Kotlin Multiplatform project targeting Android, iOS, Web, Desktop.
