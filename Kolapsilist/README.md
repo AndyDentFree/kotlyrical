@@ -2,7 +2,7 @@
 
 Sample checking out nuances on creating multi-column grids in Compose and a few variations on how to collapse sections.
 
-**Important** I'm trying to mark all the places in the code where weird platform-dependencies or other CMP vs Jetpack pains bite with a comment:
+**Important** I'm trying to mark all the places in the code where weird platform-dependencies or other CMP vs Jetpack pains bite, with a comment:
 
 `// CMPGotcha`
 
@@ -13,6 +13,12 @@ Project created following Kotlin docs on [using Web Wizard][k1]:
 - platforms checked: Android, iOS, Desktop
 
 [k1]: https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-multiplatform-create-first-app.html#create-a-project-using-the-wizard
+
+Note: I have put this sample on hold because I ran into a stupid build error (relating to cross-platform GUIDs) and don't have time to sort it out for a few weeks.
+
+I'm also trying the commercial [Compose Examples](https://composeexamples.com/components/application-ui/components/expandablelists) list snippet instead, to accelerate shipping a robust application.
+
+Most of `CMPGotcha` stuff has probably been solved with the release of CMP v1.7.0 as you can see over in [PreviewablePic](../PreviewablePic/README.md) 
 
 ## Web Wizard-generated README
 This is a Kotlin Multiplatform project targeting Android, iOS, Desktop.
