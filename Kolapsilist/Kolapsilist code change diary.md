@@ -23,7 +23,7 @@ libs.versions.toml
   added decls
   
 build.gradle.kts
-- added dependency     implementation(libs.androidx.ui.tooling.preview.android)
+- added dependency - implementation(libs.androidx.ui.tooling.preview.android)
  
 
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -39,7 +39,6 @@ App.kt
 - App replace Greeting with GridScreen() to show default grid
 
 Greeting.kt removed
-
  
 
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -57,3 +56,16 @@ RowItem.kt
 MainActivity.kt
 - Preview changed to just have GridScreen as that's not visible if preview App
   (however fails to render for Android previews due icon issue)
+ 
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+## Enable UUID on desktop (mostly for previews)
+2024-10-09
+
+commonMain/Platform.kt
+- expect fun randomUUIDString() added
+
+desktopMain/Platform.jvm.kt
+- actual fun randomUUIDString() added
+
+  

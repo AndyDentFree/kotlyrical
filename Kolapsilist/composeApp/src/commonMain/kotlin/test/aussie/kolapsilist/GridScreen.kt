@@ -93,9 +93,9 @@ fun rowRender(row: RowItem) {
 
         // Columns 2-5: Placeholder text, replace with your content
         Spacer(modifier = Modifier.width(8.dp))
-        for (i in 2..5) {
+        for (i in 2..4) {
             Text(
-                text = "Row ${row.smallId()} Col $i",
+                text = "Row ${row.smallId()}\nCol $i",
                 //text = "Row Col $i",
                 fontSize = 14.sp,
                 modifier = Modifier.weight(1f)

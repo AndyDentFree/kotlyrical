@@ -31,6 +31,16 @@ kotlin {
     }
     
     sourceSets {
+        val commonMain by getting
+        val mobileMain by creating {
+            dependsOn(commonMain)
+        }
+        val androidMain by getting {
+            dependsOn(mobileMain)
+        }
+        /*val iosMain by getting {
+            dependsOn(mobileMain)
+        }*/
         val desktopMain by getting
         
         androidMain.dependencies {
